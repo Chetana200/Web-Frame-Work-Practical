@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>Registration</title>
+<body>
+<form>
+<center>
+<label>Firstname</label>
+<input type="text" name="firstname" id="fn"/><br><br>
+<label>Lastname</label>
+<input type="text" name="lastname" id="ln"/><br><br>
+<label>Contacts</label>
+<input type="text" name="contact"  id="mob"/><br><br>
+
+<label>emailid</label>
+<input type="email" name="Email"  id="e1"/><br><br>
+<label>age</label>
+<input type="text" name="age"  id="ag"/><br><br>
+
+<label>Password</label>
+<input type="password" name="pass" id="p1"/><br><br>
+<label>Retype</label>
+<input type="password" name="repass" id="p2"/><br><br>
+
+<input type="submit" value="Submit" onClick="create_account()"/>  
+</center>
+</form>
+</head>
+
+
+
+
+
+
+<script type="text/javascript">  
+
+function create_account(){  
+
+var fn=document.getElementById("fn").value;  
+
+var ln=document.getElementById("ln").value;
+
+var mob=document.getElementById("mob").value;
+
+var e1=document.getElementById("e1").value;
+
+var ag=document.getElementById("ag").value;    
+
+var p1=document.getElementById("p1").value;  
+
+var cp=document.getElementById("p2").value;  
+
+ 
+
+         
+
+var letters = /^[A-Za-z]+$/;  
+
+        var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
+
+//other validations required code  
+
+if(fn==''||ln==''||mob==''||e1==''||ag==''||p1==''||cp==''){  
+
+alert("Enter each details correctly");  
+
+}  
+
+else if(!letters.test(fn))  
+
+        {  
+
+            alert('Name is incorrect must contain alphabets only');  
+
+        }  
+
+else if(!letters.test(ln))  
+
+        {  
+
+            alert('Name is incorrect must contain alphabets only');  
+
+        }  
+
+else if (!email_val.test(e1))  
+
+        {  
+
+            alert('Invalid email format please enter valid email id');  
+
+        }  
+
+else if(ag < 18 || ag > 50)
+{  
+
+alert("Age should be between 18 to 50");  
+
+}
+else if(isNaN(ag))
+{
+alert("age should be in number");
+}
+
+
+ 
+
+else if(p1!=cp)  
+
+{  
+
+alert("Passwords not matching");  
+
+}  
+
+else if(document.getElementById("p1").value.length > 12)  
+
+{  
+
+alert("Password maximum length is 12");  
+
+}  
+
+else if(document.getElementById("p1").value.length < 6)  
+
+{  
+
+alert("Password minimum length is 6");  
+
+}  
+
+else{  
+
+alert("Your account has been created successfully...");  
+
+
+}  
+
+}  
+
+</script>  
+
+</body>  
+
+</html>

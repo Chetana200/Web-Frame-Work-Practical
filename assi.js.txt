@@ -1,0 +1,28 @@
+1)
+var events=require('events');
+ var eventEmitter=new events.EventEmitter();
+ var connectHandler=function connected()
+ {
+     console.log('Connection Successful');
+     eventEmitter.emit('data recieved');
+ }
+ eventEmitter.on('connection',connectHandler);
+ eventEmitter.on('data recieved',function(){
+     console.log('data recieved sucessfuly');});
+     eventEmitter.emit('connection');
+     
+console.log("Program ended");
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+var http=require("http");
+
+http.createServer(function(request,response)
+{
+response.writeHead(200,{'Content-Type':'text/plain'});
+
+response.end("Hello World\n");
+}).listen(8081);
+console.log('Server running at http://127.0.0.1:8081/');
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,107 @@
+<html>
+<head>
+<script type="text/javascript">   
+
+function create_account()
+{
+var fn=document.getElementById("fn").value;
+var ln=document.getElementById("ln").value;
+var emailid=document.getElementById("emailid").value;
+var pn=document.getElementById("pn").value;
+var age=document.getElementById("age").value;
+var pass=document.getElementById("pass").value;
+var cpass = document.getElementById("cpass").value;
+
+var letters = /^[A-Za-z]+$/;   
+var email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+var phoneno= /^[0-9]+$/;
+
+if(fn=='' || ln=='' || emailid=='' || pn=='' || pass=='' || cpass=='' || age=='')
+{
+alert("please fill each detail");
+}
+else if(!letters.test(fn))
+{
+alert("Enter only alphabets");
+}
+else if(!letters.test(ln))
+{
+alert("Enter only alphabets");
+}
+else if(!email.test(emailid))
+{
+alert("Enter valid email");
+}
+else if(!phoneno.test(pn))
+{
+alert("Enter valid phone");
+}
+else if(age<18 || age>50)
+{
+alert("Enter age between 18 and 50");
+}
+else if(pass != cpass)
+{
+alert("Enter valid password");
+}
+else if(document.getElementById("pass").value.length > 12)   
+{   
+alert("Password maximum length is 12");   
+}   
+else if(document.getElementById("pass").value.length < 6)   
+{   
+
+alert("Password minimum length is 6");   
+
+}   
+else{   
+
+alert("Your account has been created successfully...");   
+
+window.location="success.html";   
+
+}   
+}  
+
+</script> 
+</head>
+<body bgcolor="pink">
+<table bgcolor="pink" align="center"/>
+<tr>
+<td>First Name</td>
+<td><input type="text" id="fn"/></td>
+</tr>
+<tr>
+<td>Last Name</td>
+<td><input type="text" id="ln"/></td>
+</tr>
+<tr>
+<td>Email_Id</td>
+<td><input type="text" id="emailid"/></td>
+</tr>
+<tr>
+<td>Phone no</td>
+<td><input type="text" id="pn"/></td>
+</tr>
+<tr>
+<td>Age</td>
+<td><input type="text" id="age"/></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="text" id="pass"/></td>
+</tr>
+<tr>
+<td>confirm password</td>
+<td><input type="text" id="cpass"/></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="Submit" onClick="create_account()"/></td>   
+</tr>
+</table>
+</body>
+</html> 
+
+   
+  
