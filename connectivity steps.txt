@@ -1,0 +1,5 @@
+1) Click on extension and download sqltool
+2) click on extension download sqltoolMysql
+3) click on add con in sqltool and add the details.
+4) install mysql on terminal using npm install mysql
+5)the about of select query will be visible in debug console section

@@ -1,0 +1,21 @@
+var mysql=require('mysql');
+
+let con=mysql.createConnection({
+    host:'127.0.0.1',
+    user:'root',
+    password:'1984',
+    database:"college2"
+});
+
+con.connect(function(err){
+    if(err) throw err;
+    con.query("select * from student",function(err,result,fields){
+        if(err) throw err;
+        console.log(result);
+        var sql="delete from student  where name='Harshal'";
+        con.query(sql,function(err,result){
+            if(err) throw err;
+            console.log("Number of records deleted:"+result.affectedRows);
+        });
+    });
+});
